@@ -1,5 +1,5 @@
 #!/usr/bin/env python
- # -*- coding: iso-8859-15-*-
+# -*- coding: iso-8859-15-*-
 import math, random 
 a = []
 b = []
@@ -7,8 +7,9 @@ dec = {6: '-- --', 7: '-----', 8: '-- --', 9: '-----'}
 dec_a = {6:'^',7:'|',8:'^',9:'|'}
 dec2 = {6: '-----', 7: '-----', 8: '-- --', 9: '-- --'}
 dec2_b = {6:'|',7:'|',8:'^',9:'^'}
-names = {'||||||' : 'Force (乾 qián); The Creative; Possessing Creative Power & Skill', 
-'^^^^^^' : 'Field (坤 kūn); The Receptive; Needing Knowledge & Skill; Do not force matters and go with the flow',
+names = {
+'||||||': 'Force (乾 qián); The Creative; Possessing Creative Power & Skill', 
+'^^^^^^': 'Field (坤 kūn); The Receptive; Needing Knowledge & Skill; Do not force matters and go with the flow',
 '|^^^|^': 'Sprouting (屯 zhūn); Difficulty at the Beginning,; Sprouting ',
 '^|^^^|': 'Enveloping (蒙 méng); Youthful Folly; Detained, Enveloped and Inexperienced',
 '|||^|^': 'Attending (需 xū); Waiting; Uninvolvement (Wait for now), Nourishment ',
@@ -85,12 +86,15 @@ else:
 	for n in hexone:
 		a.append(dec_a[n])
 		print dec[n]
-	d = "".join(a)	
-	print names[d]
+	
+	d = "".join(a)
+	e = d[::-1]
+	print names[e]
 	print 'Hexagram Two:'
 
 	for n in hextwo:
 		b.append(dec2_b[n])
 		print dec2[n]
-	c = "".join(b)	
+	g = b[::-1]
+	c = "".join(g)
 	print names[c]
