@@ -9,10 +9,10 @@ Gem::Specification.new do |s|
   s.date = %q{2010-11-08}
   s.description = %q{Generate an Iching hexagram and access various things about it.}
   s.email = %q{sunrisetimes@gmail.com}
-  s.extra_rdoc_files = ["lib/iching.rb", "lib/readme.markdown"]
-  s.files = ["Manifest", "Rakefile", "lib/iching.rb", "lib/readme.markdown", "iching.gemspec"]
+  s.extra_rdoc_files = ["lib/iching.rb"]
+  s.files = ["Rakefile", "iching.gemspec", "lib/iching.rb", "readme.markdown", "Manifest"]
   s.homepage = %q{https://github.com/mattmills/iching}
-  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Iching"]
+  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Iching", "--main", "readme.markdown"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{iching}
   s.rubygems_version = %q{1.3.7}
