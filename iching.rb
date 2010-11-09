@@ -12,10 +12,14 @@ class Iching
     @binhex2_key = { 6 => '1', 7 => '1', 8 => '0', 9 => '0'}
   end
   def display
-    puts hex_symbol
-    puts hex_name
-    puts hex_symbol(1)
-    puts hex_name(1)
+    if Random.new.rand(1..20) > 1 
+      puts hex_symbol
+      puts hex_name
+      puts hex_symbol(1)
+      puts hex_name(1)
+    else
+      puts "A suffusion of yellow."
+    end
   end
   def hex_name(hex = 0)
     bin_hex = ''
@@ -24,7 +28,7 @@ class Iching
      end
      if hex == 1
        @hex.each {|stick| bin_hex << @binhex2_key[stick]} 
-      end
+     end
     return @list[bin_hex]
   end
   def hex_symbol(hex = 0)
