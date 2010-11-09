@@ -18,24 +18,20 @@ class Iching
       puts "A suffusion of yellow."
     end
   end
-  def hex_name(hex = 0)
-    bin_hex = ''
-     if hex == 0
-       @hex.each {|stick| bin_hex << @binhex1_key[stick]}
-     end
-     if hex == 1
-       @hex.each {|stick| bin_hex << @binhex2_key[stick]} 
-     end
+  def hex_name(which_hex = 0)
+    bin_hex = String.new
+    case which_hex
+      when which_hex == 0; @hex.each {|stick| bin_hex << @binhex1_key[stick]}
+      when which_hex == 1; @hex.each {|stick| bin_hex << @binhex2_key[stick]} 
+    end
     return @list[bin_hex]
   end
-  def hex_symbol(hex = 0)
-    symbol = ''
-      if hex == 0
-        @hex.each {|stick| symbol << @hexagram1_key[stick] + "\n"}
-      end
-      if hex == 1
-        @hex.each {|stick| symbol << @hexagram2_key[stick] + "\n"}   
-      end 
+  def hex_symbol(which_hex = 0)
+    symbol = String.new
+    case which_hex
+      when which_hex == 0 then @hex.each {|stick| symbol << @hexagram1_key[stick] + "\n"}
+      when which_hex == 1 then @hex.each {|stick| symbol << @hexagram2_key[stick] + "\n"}   
+    end 
     return symbol 
   end  
 end
