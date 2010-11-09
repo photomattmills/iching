@@ -39,4 +39,3 @@ class Iching
     return symbol 
   end  
 end
-Iching.new.display
