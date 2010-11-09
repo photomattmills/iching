@@ -1,0 +1,3 @@
+This is a little program to cast I Ching hexagrams that I knocked together when I was first learning python, and have since improved at intervals when I was bored, and then I ported it to ruby, so you can use the class to get stuff about the hexagram, and use it in your awesome projects too. 
+
+There is probably a better/faster/cleaner way to do what I've done here, but this sort of hews closely to the way you would make a reading with coins. If it looks weird, that's why. 
