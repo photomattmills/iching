@@ -13,10 +13,7 @@ class Iching
   end
   def display
     if Random.new.rand(1..20) > 1 
-      puts hex_symbol
-      puts hex_name
-      puts hex_symbol(1)
-      puts hex_name(1)
+      puts hex_symbol, hex_name, hex_symbol(1), hex_name(1)
     else
       puts "A suffusion of yellow."
     end
@@ -42,5 +39,4 @@ class Iching
     return symbol 
   end  
 end
-
 Iching.new.display
