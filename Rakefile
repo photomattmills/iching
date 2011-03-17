@@ -2,12 +2,13 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('iching', '0.0.2') do |p|
+Echoe.new('iching', '0.0.3') do |p|
   p.description    = "Generate an Iching hexagram and access various things about it."
   p.url            = "https://github.com/mattmills/iching"
   p.author         = "Matt Mills"
   p.email          = "sunrisetimes@gmail.com"
   p.ignore_pattern = ["tmp/*", "script/*"]
+  p.dependencies   = ["backports"]
   p.development_dependencies = []
 end
 
