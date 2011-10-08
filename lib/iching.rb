@@ -2,7 +2,7 @@
 require 'rubygems'
 
 #ruby version compatibility hax
-if RUBY_VERSION.gsub(".","").to_int >= 192
+if RUBY_VERSION.gsub(".","").to_int > 191
   Encoding.default_internal = Encoding.find("UTF-8")
 else
   require 'backports'
