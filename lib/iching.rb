@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 require 'rubygems'
 
 #ruby version compatibility hax
-if RUBY_VERSION.gsub(".","").to_i > 191
-  Encoding.default_internal = Encoding.find("UTF-8")
-else
+unless RUBY_VERSION.gsub(".","").to_i > 190
   require 'backports'
 end
+
 
 class Iching
   def initialize()
