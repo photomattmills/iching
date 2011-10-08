@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('iching', '0.0.3') do |p|
+Echoe.new('iching', '0.0.4') do |p|
   p.description    = "Generate an Iching hexagram and access various things about it."
   p.url            = "https://github.com/mattmills/iching"
   p.author         = "Matt Mills"

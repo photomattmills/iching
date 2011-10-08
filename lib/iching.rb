@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require 'backports'
+
+#ruby version compatibility hax
+if RUBY_VERSION.gsub(".","").to_int >= 192
+  Encoding.default_internal = Encoding.find("UTF-8")
+else
+  require 'backports'
+end
+
 class Iching
   def initialize()
     @hex = 6.times.map{ Random.new.rand(6..9) }.reverse  
