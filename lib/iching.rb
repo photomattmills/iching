@@ -13,33 +13,28 @@ class Iching
   
   def display
     if Random.new.rand(1..20) > 1 
-      puts hex_symbol, hex_name, hex_symbol(1), hex_name(1)
+      puts hex_symbol, hex_name, hex_symbol(2), hex_name(2)
     else
       puts "A suffusion of yellow."
     end
   end
 
-  def hex_name(hex = 0)
-    bin_hex = ''
-     if hex == 0
-       hex.each {|stick| bin_hex << binhex1_key[stick]}
-     end
-     if hex == 1
-       hex.each {|stick| bin_hex << binhex2_key[stick]} 
-     end
+  def hex_name(second = false)
+    unless second
+      bin_hex = hex.inject('') {|store,stick| store << binhex1_key[stick]}
+    else
+      bin_hex = hex.inject('') {|store,stick| store << binhex1_key[stick]}
+    end
     bin_hex.reverse!
     return list[bin_hex]
   end
-  
-  def hex_symbol(hex = 0)
-    symbol = ''
-      if hex == 0
-        hex.each {|stick| symbol << hexagram1_key[stick] + "\n"}
-      end
-      if hex == 1
-        hex.each {|stick| symbol << hexagram2_key[stick] + "\n"}   
-      end 
-    return symbol 
-  end  
+
+  def hex_symbol(second = false)
+    unless second
+      hex.inject('') {|store, stick| store << hexagram1_key[stick] + "\n"}
+    else
+      hex.inject('') {|store, stick| store << hexagram2_key[stick] + "\n"}
+    end
+  end
 
 end
