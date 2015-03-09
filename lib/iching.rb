@@ -2,17 +2,11 @@
 require 'rubygems'
 require 'dictionaries.rb'
 
-#ruby version compatibility hax
-unless RUBY_VERSION.gsub(".","").to_i > 190
-  require 'backports'
-end
-
-
 class Iching
   include Dictionaries
-  
+
   def display
-    if Random.new.rand(1..20) > 1 
+    if Random.new.rand(1..20) > 1
       puts hex_symbol, hex_name, hex_symbol(2), hex_name(2)
     else
       puts "A suffusion of yellow."
