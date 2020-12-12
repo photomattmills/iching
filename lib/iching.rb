@@ -6,6 +6,7 @@ class Iching
   include Dictionaries
 
   def display
+    @current_hex = hex()
     if Random.new.rand(1..20) > 1
       puts hex_symbol, hex_name, hex_symbol(2), hex_name(2)
     else
@@ -15,9 +16,9 @@ class Iching
 
   def hex_name(second = false)
     unless second
-      bin_hex = hex.inject('') {|store,stick| store << binhex1_key[stick]}
+      bin_hex = @current_hex.inject('') {|store,stick| store << binhex1_key[stick]}
     else
-      bin_hex = hex.inject('') {|store,stick| store << binhex1_key[stick]}
+      bin_hex = @current_hex.inject('') {|store,stick| store << binhex1_key[stick]}
     end
     bin_hex.reverse!
     return list[bin_hex]
@@ -25,9 +26,9 @@ class Iching
 
   def hex_symbol(second = false)
     unless second
-      hex.inject('') {|store, stick| store << hexagram1_key[stick] + "\n"}
+      @current_hex.inject('') {|store, stick| store << hexagram1_key[stick] + "\n"}
     else
-      hex.inject('') {|store, stick| store << hexagram2_key[stick] + "\n"}
+      @current_hex.inject('') {|store, stick| store << hexagram2_key[stick] + "\n"}
     end
   end
 
