@@ -1,9 +1,8 @@
 # encoding: UTF-8
-require 'rubygems'
 require 'dictionaries.rb'
 
 class Iching
-  include Dictionaries
+  include ::Dictionaries
 
   def display
     @current_hex = hex()
@@ -31,5 +30,4 @@ class Iching
       @current_hex.inject('') {|store, stick| store << hexagram2_key[stick] + "\n"}
     end
   end
-
 end
