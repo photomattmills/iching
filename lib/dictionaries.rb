@@ -1,9 +1,6 @@
 # encoding: UTF-8
 module Dictionaries
-  def hex
-    6.times.map{ Random.new.rand(6..9) }.reverse  
-  end
-  
+
   def list
     { '111111'=> '1. Force (乾 qián); The Creative; Possessing Creative Power & Skill',
       '000000'=> '2. Field (坤 kūn); The Receptive; Needing Knowledge & Skill; Do not force matters and go with the flow',
@@ -69,21 +66,5 @@ module Dictionaries
       '001100'=> '62. Small Exceeding (小過 xiǎo guò); Small Preponderance; Small Surpassing',
       '101010'=> '63. Already_Fording (既濟 jì jì); After Completion; Completion',
       '010101'=> '64. Not-Yet Fording (未濟 wèi jì); Before Completion; Incompletion'}
-  end
-    
-  def hexagram1_key
-    { 6 => '-- --', 7 => '-----', 8 => '-- --', 9 => '-----'}
-  end
-
-  def hexagram2_key 
-    { 6 => '-----', 7 => '-----', 8 => '-- --', 9 => '-- --'}
-  end
-  
-  def binhex1_key
-    { 6 => '0', 7 => '1', 8 => '0', 9 => '1'}
-  end
-
-  def binhex2_key 
-    { 6 => '1', 7 => '1', 8 => '0', 9 => '0'}
   end
 end

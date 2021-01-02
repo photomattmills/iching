@@ -2,32 +2,52 @@
 require 'dictionaries.rb'
 
 class Iching
-  include ::Dictionaries
+  def hex
+    @hex ||= 6.times.map{ Random.new.rand(6..9) }.reverse
+  end
 
   def display
-    @current_hex = hex()
-    if Random.new.rand(1..20) > 1
-      puts hex_symbol, hex_name, hex_symbol(2), hex_name(2)
-    else
-      puts "A suffusion of yellow."
-    end
+    # puts "A suffusion of yellow." && return if Random.new.rand(1..20) <= 1
+    hex1 = Hex1.new(hex)
+    hex2 = Hex2.new(hex)
+    puts hex1.hex_symbol, hex1.hex_name, hex2.hex_symbol, hex2.hex_name
   end
 
-  def hex_name(second = false)
-    unless second
-      bin_hex = @current_hex.inject('') {|store,stick| store << binhex1_key[stick]}
-    else
-      bin_hex = @current_hex.inject('') {|store,stick| store << binhex1_key[stick]}
-    end
-    bin_hex.reverse!
-    return list[bin_hex]
+end
+
+class Hex1
+  include ::Dictionaries
+
+  attr_reader :hex
+
+  def initialize(hex)
+    @hex = hex
   end
 
-  def hex_symbol(second = false)
-    unless second
-      @current_hex.inject('') {|store, stick| store << hexagram1_key[stick] + "\n"}
-    else
-      @current_hex.inject('') {|store, stick| store << hexagram2_key[stick] + "\n"}
-    end
+  def bin_hex_key
+    { 6 => '0', 7 => '1', 8 => '0', 9 => '1'}
+  end
+
+  def hexagram_key
+    { 6 => '-- --', 7 => '-----', 8 => '-- --', 9 => '-----'}
+  end
+
+  def hex_symbol
+    hex.map{|n| hexagram_key[n] }.join("\n")
+  end
+
+  def hex_name
+    hex_binary = hex.map{|n| bin_hex_key[n]}.join("").reverse()
+    return list[hex_binary]
+  end
+end
+
+class Hex2 < Hex1
+  def bin_hex_key
+    { 6 => '1', 7 => '1', 8 => '0', 9 => '0'}
+  end
+
+  def hexagram_key
+    { 6 => '-----', 7 => '-----', 8 => '-- --', 9 => '-- --'}
   end
 end
