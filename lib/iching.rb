@@ -15,21 +15,13 @@ class Iching
 
 end
 
-class Hex1
+class Hex
   include ::Dictionaries
 
   attr_reader :hex
 
   def initialize(hex)
     @hex = hex
-  end
-
-  def bin_hex_key
-    { 6 => '0', 7 => '1', 8 => '0', 9 => '1'}
-  end
-
-  def hexagram_key
-    { 6 => '-- --', 7 => '-----', 8 => '-- --', 9 => '-----'}
   end
 
   def hex_symbol
@@ -42,7 +34,17 @@ class Hex1
   end
 end
 
-class Hex2 < Hex1
+class Hex1 < Hex
+  def bin_hex_key
+    { 6 => '0', 7 => '1', 8 => '0', 9 => '1'}
+  end
+
+  def hexagram_key
+    { 6 => '-- --', 7 => '-----', 8 => '-- --', 9 => '-----'}
+  end
+end
+
+class Hex2 < Hex
   def bin_hex_key
     { 6 => '1', 7 => '1', 8 => '0', 9 => '0'}
   end
